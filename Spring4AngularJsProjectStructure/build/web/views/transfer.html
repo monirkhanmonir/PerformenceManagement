@@ -1,0 +1,88 @@
+<article class="card-body mx-auto" style="max-width: 700px;">
+    <h4 class="card-title mt-3 text-center">Employee Transfer Form</h4>
+    <form ng-app="myApp" ng-controller="transferCtrl">
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> Employee Id: </span>
+            </div>
+            <input name="" class="form-control" type="number" ng-model="transfer.id">
+        </div>
+
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Employee Name: </span>
+            </div>
+            <input name="" class="form-control" type="text" ng-model="transfer.name">
+        </div>
+        <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> Date : </span>
+            </div>
+            <input name="" class="form-control" type="date" ng-model="transfer.date">
+        </div>
+
+
+
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> Previous Dept/Unit  </span>
+            </div>
+            <select class="form-control" ng-model="transfer.previousPost">
+
+                <option>Designer</option>
+                <option>Manager</option>
+                <option>Accaunting</option>
+            </select>
+        </div>
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> Current Dept/Unit  </span>
+            </div>
+            <select class="form-control" ng-model="transfer.currentPost">
+
+                <option>Designer</option>
+                <option>Manager</option>
+                <option>Accaunting</option>
+            </select>
+        </div>
+
+
+        <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Point Score:
+                </span>
+            </div>
+            <input name="" class="form-control" type="number" ng-model="transfer.score">
+
+        </div>
+
+        <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Remark :
+                </span>
+            </div>
+            <textarea class="form-control" ng-model="transfer.remark"></textarea>
+        </div>
+
+
+
+
+        <!-- form-group// -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"
+                    ng-click="saveTransfer()">Submit</button>
+        </div>
+        <!-- form-group// -->
+
+
+        {{transfer.name}}
+        {{transfer.Score}}
+    </form>
+</article>

@@ -1,0 +1,50 @@
+<div class="container-fluid" ng-controller="appraisalCtrl">
+
+
+    <h2>Employ Appraisal Form</h2>
+    <div>{{msg}}</div>
+
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <!-- Default form contact -->
+            <form class="text-center border border-light p-5">
+
+                <p class="h4 mb-4">Employ Appraisal Form</p>
+
+                <!-- Name -->
+                <input type="text"
+                       class="form-control mb-4" placeholder="Employee Id" ng-model="appraisal.empId">
+
+                <!-- Email -->
+                <input type="text" 
+                       class="form-control mb-4" placeholder="Employee Name"  ng-model="appraisal.name">
+
+
+                <!-- Email -->
+                <input type="date" 
+                       class="form-control mb-4" placeholder="Select Date" ng-model="appraisal.date">
+
+                <div class="form-group">
+                    <input type="number" 
+                           class="form-control mb-4" placeholder="Employee Point Score" ng-model="appraisal.pointScore">
+
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <textarea class="form-control rounded-0"
+                              rows="3" placeholder="Remark" ng-model="appraisal.remark"></textarea>
+                </div>
+
+
+
+                <!-- Send button -->
+                <button class="btn btn-info btn-block" type="submit" ng-click="storeAppraisal()">Send</button>
+
+            </form>
+            <!-- Default form contact -->
+
+        </div>
+    </div>
+
+</div>

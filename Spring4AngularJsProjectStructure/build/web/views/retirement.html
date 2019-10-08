@@ -1,0 +1,77 @@
+<article class="card-body mx-auto" style="max-width: 600px;">
+		<h4 class="card-title mt-3 text-center">Employee Retirement Form</h4>
+		<form ng-controller="retirementCtrl">
+
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Employee Id: </span>
+				</div>
+				<input name="" class="form-control" type="number" ng-model="retirement.eId">
+			</div>
+
+
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Employee Name: </span>
+				</div>
+				<input name="" class="form-control" type="text" ng-model="retirement.eName">
+			</div>
+			<!-- form-group// -->
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Date Employed: </span>
+				</div>
+				<input name="" class="form-control" type="date" ng-model="retirement.employedDate">
+			</div>
+
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Date Retired: </span>
+				</div>
+				<input name="" class="form-control" type="date" ng-model="retirement.retiredDate">
+			</div>
+
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Date Last Promoted: </span>
+				</div>
+				<input name="" class="form-control" type="date" ng-model="retirement.lastPromotedDate">
+			</div>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> Position Last Promoted: </span>
+				</div>
+				<select class="form-control" ng-model="retirement.positionLast">
+
+					<option>Designer</option>
+					<option>Manager</option>
+					<option>Accaunting</option>
+				</select>
+			</div>
+
+
+			<!-- form-group// -->
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Emolument: 
+					</span>
+				</div>
+				<input name="" class="form-control" type="number" ng-model="retirement.emolument">
+
+			</div>
+
+
+
+
+			<!-- form-group// -->
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block"
+					ng-click="storeRetirement()">Submit</button>
+			</div>
+			<!-- form-group// -->
+
+
+			{{retirement.eName}}
+			{{retirement.lastPromotedDate}}
+		</form>
+	</article>
