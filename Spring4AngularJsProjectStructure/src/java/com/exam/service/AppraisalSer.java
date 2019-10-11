@@ -14,11 +14,15 @@ public class AppraisalSer implements AppraisalInterface {
     AppraisalDaoInterf appraisalDaoInterf;
     @Override
     public Appraisal saveAppraisal(Appraisal appraisal) {
-        
-        System.out.println("accept");
-        System.out.println(appraisal.getName());
+  
         appraisalDaoInterf.saveAppraisal(appraisal);
         return null;
+    }
+
+    @Override
+    public Appraisal getById(int id) {
+        System.out.println("Call Appraisal service");
+      return appraisalDaoInterf.getById(id);
     }
     
 }

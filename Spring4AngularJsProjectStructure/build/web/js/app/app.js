@@ -55,6 +55,19 @@
                 templateUrl: 'views/showEmployee.html',
                 controllerAs: 'vm'
             })
+            .when('/aboutUs', {
+                templateUrl: 'views/aboutus.html',
+                controllerAs: 'vm'
+            })
+            .when('/contact', {
+                templateUrl: 'views/contact.html',
+                controllerAs: 'vm'
+            })
+            .when('/getById', {
+                templateUrl: 'views/empDetaisl.html',
+                controllerAs: 'vm'
+            })
+
 
             .otherwise({ redirectTo: '/login' });
     }
@@ -76,5 +89,4 @@
             }
         });
     }
-
 })();

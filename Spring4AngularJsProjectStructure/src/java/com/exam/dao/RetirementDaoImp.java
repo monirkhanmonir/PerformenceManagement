@@ -16,5 +16,11 @@ public class RetirementDaoImp implements RetirementDaoInterF{
         System.out.println("Dao sess");
         return null;
     }
+
+//    @Override
+//    public Retirement getById(int id) {
+//        System.out.println("Retirement dao called");
+//      return (Retirement)sessionFactory.getCurrentSession().get(Retirement.class, id);
+//    }
     
 }

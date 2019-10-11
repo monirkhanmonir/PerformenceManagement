@@ -15,5 +15,11 @@ public class AppraisalDaoImp implements AppraisalDaoInterf{
        sessionFactory.getCurrentSession().save(appraisal);
         return null;
     }
+
+    @Override
+    public Appraisal getById(int id) {
+        System.out.println("Appraisal dao call");
+     return (Appraisal) sessionFactory.getCurrentSession().get(Appraisal.class, id);
+    }
     
 }

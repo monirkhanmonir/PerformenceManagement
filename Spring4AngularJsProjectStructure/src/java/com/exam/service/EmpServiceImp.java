@@ -3,6 +3,7 @@ package com.exam.service;
 
 import com.exam.dao.EmployeeDaoInteface;
 import com.exam.model.Employee;
+import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,19 @@ public class EmpServiceImp implements EmpService<Employee>{
     public void saveUser(Employee emp) {
         
         employeeDaoInteface.saveUser(emp);
+    }
+
+    @Override
+    public List<Employee> getAllEmployee() {
+        System.out.println("Call Service");
+                
+       return employeeDaoInteface.getAllEmployee();
+    }
+
+    @Override
+    public Employee getById(int id) {
+        System.out.println("Call service get id");
+      return employeeDaoInteface.getById(id);
     }
     
 }

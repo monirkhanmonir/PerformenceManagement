@@ -1,0 +1,15 @@
+<div ng-controller="empController">
+  <table class="table table-bordered">
+        <tr>
+            <td>id</td>
+            <td>Name</td>
+            <td>Email</td>
+        </tr>
+        <tr ng-repeat="item in employeList">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+        </tr>
+    </table>
+
+</div>

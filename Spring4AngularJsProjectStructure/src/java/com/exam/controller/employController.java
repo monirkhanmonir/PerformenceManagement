@@ -9,7 +9,9 @@ import com.exam.service.AppraisalInterface;
 import com.exam.service.EmpService;
 import com.exam.service.RetirementInterF;
 import com.exam.service.TranesferSerInterF;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +28,7 @@ public class employController {
     RetirementInterF retirementInterF;
     @Autowired
     TranesferSerInterF tranesferSerInterF;
+
     @RequestMapping(value = "/empcreate")
     public String addEmploy(@RequestBody Employee employee) {
         System.out.println(employee.getName());
@@ -36,27 +39,64 @@ public class employController {
 
     @RequestMapping(value = "/transferData")
     public String addTransfer(@RequestBody Transfer transfer) {
-        System.out.println("Accept");
+
         tranesferSerInterF.saveTransfer(transfer);
-        System.out.println(transfer.getName());
-        System.out.println(transfer.getDate());
+
         return null;
     }
 
     @RequestMapping(value = "/retirement")
     public String addRetirement(@RequestBody Retirement retirement) {
-        System.out.println("Ok");
-        System.out.println(retirement.geteName());
-        
         retirementInterF.saveRetirement(retirement);
-        System.out.println("Reansection");
-        System.out.println(retirement.getEmployedDate());
         return null;
     }
 
     @RequestMapping(value = "/appraisaldata")
     public String addAppraisa(@RequestBody Appraisal appraisal) {
-        appraisalser.saveAppraisal(appraisal);     
+        appraisalser.saveAppraisal(appraisal);
         return null;
     }
+
+    @RequestMapping(value = "/showAllEmployee")
+    public List<Employee> getAllEmployee() {
+        System.out.println("accept controlller");
+        List<Employee> listemp = empService.getAllEmployee();
+        System.out.println(listemp);
+
+        return listemp;
+    }
+
+    @RequestMapping(value = "/empDetails/{id}")
+    public Employee getDetails(@PathVariable int id) {
+        // System.out.println(id);
+        Employee emp = empService.getById(id);
+        System.out.println(emp);
+        return emp;
+    }
+
+    @RequestMapping(value = "/transferDetails/{id}")
+    public Transfer getTarnsferDetails(@PathVariable int id) {
+
+        Transfer ts = tranesferSerInterF.getById(id);
+        System.out.println(ts);
+        return ts;
+    }
+
+    @RequestMapping(value = "/appraisalDetails/{id}")
+    public Appraisal getAppraisalDetails(@PathVariable int id) {
+        System.out.println("Appraisal request accept");
+        Appraisal aps = appraisalser.getById(id);
+        System.out.println(aps);
+        return aps;
+    }
+
+    @RequestMapping(value = "/retirementDetails/{id}")
+    public Retirement getRetirementDetails(@PathVariable int id) {
+        System.out.println("Retirement request accept"+id);
+//        Retirement retc = retirementInterF.getById(id);
+//        System.out.println(retc);
+//        return retc;
+        return null;
+    }
+
 }

@@ -17,5 +17,11 @@ public class TransferSerImp implements TranesferSerInterF{
         transferDaoInterF.saveTransfer(transfer);
         return null;
     }
+
+    @Override
+    public Transfer getById(int id) {
+        System.out.println("Call Transfer Service");
+     return transferDaoInterF.getById(id);
+    }
     
 }

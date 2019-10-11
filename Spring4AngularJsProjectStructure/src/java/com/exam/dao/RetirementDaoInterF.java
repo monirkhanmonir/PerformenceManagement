@@ -6,4 +6,5 @@ import com.exam.model.Retirement;
 
 public interface RetirementDaoInterF {
     public Retirement saveRetirement(Retirement retirement);
+//    public Retirement getById(int id);
 }

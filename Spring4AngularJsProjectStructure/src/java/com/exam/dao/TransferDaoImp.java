@@ -16,5 +16,11 @@ public class TransferDaoImp implements TransferDaoInterF{
        sessionFactory.getCurrentSession().save(transfer);
         return null;
     }
+
+    @Override
+    public Transfer getById(int id) {
+        System.out.println("Call Tarnsfer daw");
+     return (Transfer)sessionFactory.getCurrentSession().get(Transfer.class, id);
+    }
     
 }

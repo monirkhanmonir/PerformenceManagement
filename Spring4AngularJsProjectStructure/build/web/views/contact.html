@@ -1,33 +1,41 @@
 <div class="container">
     <div class="row justify-content-center">
 
-        <div class="col-md-5">
+        <div class="col-md-10">
             <h3>Create Contact</h3>
             <br/>
-            <form name="contact">
-                Name:<div class="form-group">
-                    <input type="text" name="name" ng-model="name" 
-                           class="form-control" 
-                           placeholder="Write Your name *" />
+             <form name="contactForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" 
+                       class="form-control"
+                       ng-model="contact.fullName"/>
+                <input type="hidden" ng-model="contact.cId"/>
+            </div>
 
-                </div>                
-                Phone number:<div class="form-group">
-                    <input type="text" name="phone_number" 
-                           ng-model="phoneNumber" 
-                           class="form-control" />
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" 
+                       class="form-control"
+                       ng-model="contact.emailAddress"/>
+            </div>
 
-                </div>  
-                Hobby Name<div class="form-group">
-                    <input type="text" name="hobbyName" 
-                           ng-model="hobbyName"  
-                           class="form-control" />
+            <div class="form-group">
+                <label>Subject</label>
+                <input type="text" 
+                       class="form-control"
+                       ng-model="contact.cSubject"/>
+            </div>
 
-                </div>
-                <div class="form-group">
-                    <input type="button" class="btn btn-danger" 
-                           ng-click="saveContact()" value="Save" />
-                </div>               
-            </form>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-control"
+                          ng-model="contact.cMessage"></textarea>
+            </div>
+            <button class="btn btn-primary"
+                    ng-click="contactSend()">Send</button>
+            
+        </form>
         </div>
 
 
