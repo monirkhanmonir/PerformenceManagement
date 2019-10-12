@@ -27,6 +27,13 @@ public class EmployeeDao implements EmployeeDaoInteface<Employee>{
       
         return (Employee) sessionFactory.getCurrentSession().get(Employee.class,id);
     }
+
+    @Override
+    public void deleteEmp(int id) {
+        System.out.println("Delete dao call");
+        Employee entity = (Employee) sessionFactory.getCurrentSession().get(Employee.class, id);
+        sessionFactory.getCurrentSession().delete(entity);
+    }
     
     
 }

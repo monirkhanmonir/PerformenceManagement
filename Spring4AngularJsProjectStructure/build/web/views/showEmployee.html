@@ -24,20 +24,22 @@
                 <td>{{ item.jobTitle}}</td>
                 <td>{{ item.address}}</td>
                 <td>
-                    <a class="btn btn-link text-success" ><i class="fa fa-edit"></i></a>
-                    <a class="btn btn-link text-danger" ><i class="fa fa-trash"></i></a>
+                    <input type="button" class="btn btn-success" value="Edit" ng-click="editEmp(item.id)"/>
+                    <input type="button" class="btn btn-danger" value="Delete" ng-click="deleteEmp(item.id)"/>
+<!--                    <a class="btn btn-link text-success">Edit</a>
+                    <a class="btn btn-link text-danger" >Delete</a>-->
                 </td>
                 <td>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" ng-click="emploueeDetails(item.id, $index)">
                         Details
                     </button>
-                    <!--                    <button class="btn btn-success" ng-click="emploueeDetails(item.id, $index)">Details</button>        -->
+
                 </td>
             </tr>
         </tbody>
     </table>
-    <h2> Employee By id</h2>
-    <!--    <h1 ng-repeat="item in employeList">{{item.name}}</h1>-->
+
+
 
     <!-- Button trigger modal -->
 
@@ -53,27 +55,81 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td>id</td>
-                            <td>Name</td>
-                            <td>Email</td>
-                        </tr>
-                        <tr ng-repeat="item in employeList">
-                            <td>{{item.id}}</td>
-                            <td>{{item.name}}</td>
-                            <td>{{item.email}}</td>
-                        </tr>
-                    </table>s
+                    <div class="card  mb-1" style="max-width: 30rem;">
+                        <div class="card-header">Personal Information</div>
+                        <div class="card-body">
+                            <div>
+                                <h5 class="card-title">Employee Personal Information</h5>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>id</td>
+                                        <td>Name</td>
+                                        <td>Email</td>
+                                        <td>Phone</td>
+                                        <td>Gender</td>
+                                        <td>Job Title</td>
+                                        <td>Address</td>
+                                    </tr>
+                                    <tr ng-repeat="item in employeList">
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.email}}</td>
+                                        <td>{{item.phone}}</td>
+                                        <td>{{item.gender}}</td>
+                                        <td>{{item.jobTitle}}</td>
+                                        <td>{{item.address}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                            <div>
+                                <h5 class="card-title">Employee Transfer Information</h5>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Date</td>
+                                        <td>Pre Post</td>
+                                        <td>CurR Post</td>
+                                        <td>Score</td>
+                                        <td>Remark</td>
+                                    </tr>
+                                    <tr ng-repeat="item in transferList">
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.date|date:'dd/MM/yyyy'}}</td>
+                                        <td>{{item.previousPost}}</td>
+                                        <td>{{item.currentPost}}</td>
+                                        <td>{{item.score}}</td>
+                                        <td>{{item.remark}}</td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                            <hr>
+                            <h5 class="card-title">Employee Appraisal Information</h5>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Date</td>
+                                    <td>Total Point Score</td>
+                                    <td>Remark</td>
+                                </tr>
+                                <tr ng-repeat="item in appraisalList">
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.date|date:'dd/MM/yyyy'}}</td>
+                                    <td>{{item.pointScore}}</td>
+                                    <td>{{item.remark}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+
             </div>
         </div>
     </div>
-
-
-
 </div>
+
+
+

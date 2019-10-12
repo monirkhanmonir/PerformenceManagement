@@ -33,5 +33,11 @@ public class EmpServiceImp implements EmpService<Employee>{
         System.out.println("Call service get id");
       return employeeDaoInteface.getById(id);
     }
+
+    @Override
+    public void deleteEmp(int id) {
+        System.out.println("delete Sercive calll");
+        employeeDaoInteface.deleteEmp(id);
+    }
     
 }

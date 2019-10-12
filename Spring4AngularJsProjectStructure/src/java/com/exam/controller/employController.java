@@ -98,5 +98,14 @@ public class employController {
 //        return retc;
         return null;
     }
+    
+    
+    @RequestMapping(value = "/deleteEmp/{id}")
+    public void deleteImp(@PathVariable int id) {
+        System.out.println("Delete request accept");
+        empService.deleteEmp(id);
+       
+    }
+    
 
 }
